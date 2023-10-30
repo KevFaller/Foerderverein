@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/9K7tWIVLJKlLbcBLqIEI868CPA2+VhARN+g42aSu9A=",
+  "Hash": "1jOlsvmX0Z82VMrHPFVfpSZPj3R75OvAgrGjaGH0MPs=",
   "Source": "Foerderverein-Online",
   "BasePath": "_content/Foerderverein-Online",
   "Mode": "Default",
@@ -1834,6 +1834,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
+      "Identity": "/Users/kevinfaller/Repositories/F-rderverein/Foerderverein-Online/Foerderverein-Online/wwwroot/Bilder/Förderverein_logo.png",
+      "SourceId": "Foerderverein-Online",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kevinfaller/Repositories/F-rderverein/Foerderverein-Online/Foerderverein-Online/wwwroot/",
+      "BasePath": "_content/Foerderverein-Online",
+      "RelativePath": "Bilder/Förderverein_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Bilder/Förderverein_logo.png"
     },
     {
       "Identity": "/Users/kevinfaller/Repositories/F-rderverein/Foerderverein-Online/Foerderverein-Online/wwwroot/css/site.css",

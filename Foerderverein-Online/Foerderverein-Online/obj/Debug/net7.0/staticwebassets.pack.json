@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
+      "Id": "/Users/kevinfaller/Repositories/F-rderverein/Foerderverein-Online/Foerderverein-Online/wwwroot/Bilder/Förderverein_logo.png",
+      "PackagePath": "staticwebassets/Bilder/Förderverein_logo.png"
+    },
+    {
       "Id": "/Users/kevinfaller/Repositories/F-rderverein/Foerderverein-Online/Foerderverein-Online/wwwroot/Förderverein_logo.ico",
       "PackagePath": "staticwebassets/Förderverein_logo.ico"
     },
