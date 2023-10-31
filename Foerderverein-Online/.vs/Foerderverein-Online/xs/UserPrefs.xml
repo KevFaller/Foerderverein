@@ -1,4 +1,41 @@
 ﻿<Properties StartupConfiguration="{3FE0AD95-8040-4254-B3AF-4E74DC8C0E77}|https">
-  <MonoDevelop.Ide.ItemProperties.Foerderverein-Online FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Foerderverein-Online PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Foerderverein-Online/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Foerderverein-Online/Controllers/HomeController.cs" Line="38" Column="1" />
+      <File FileName="Foerderverein-Online/Views/Home/Index.cshtml" />
+      <File FileName="Foerderverein-Online/Views/Shared/_Layout.cshtml" Line="32" Column="107" />
+      <File FileName="Foerderverein-Online/wwwroot/css/site.css" />
+      <File FileName="Foerderverein-Online/Views/Home/Privacy.cshtml" />
+      <File FileName="Foerderverein-Online/Steckbrief.cs" Line="1" Column="1" />
+      <File FileName="Foerderverein-Online/Views/Test.cshtml" Line="1" Column="1" />
+      <File FileName="Foerderverein-Online/Views/Home/UeberUns.cshtml" />
+      <File FileName="Foerderverein-Online/Views/Home/UeberUns.cshtml.cs" Line="17" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Foerderverein-Online" expanded="True">
+            <Node name="Foerderverein-Online">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Views">
+                <Node name="Home">
+                  <Node name="UeberUns.cshtml" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
