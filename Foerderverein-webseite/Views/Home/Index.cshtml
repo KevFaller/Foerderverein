@@ -1,0 +1,38 @@
+﻿@using System.Data.SqlClient
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Startseite";
+
+    bool isDatabaseConnected = false;
+
+    try
+    {
+        // Versuche eine Verbindung zur Datenbank herzustellen
+        using (var connection = new SqlConnection(Configuration.GetConnectionString("DefaultConnection")))
+        {
+            connection.Open();
+            isDatabaseConnected = true;
+        }
+    }
+    catch (Exception ex)
+    {
+        // Hier könntest du bei Bedarf eine genauere Fehlermeldung protokollieren
+        Console.WriteLine($"Fehler bei der Verbindung zur Datenbank: {ex.Message}");
+    }
+}
+
+<div class="text-center">
+    <h1 class="display-4">HALLO</h1>
+    @if (isDatabaseConnected)
+    {
+        <p>Die Datenbankverbindung wurde erfolgreich hergestellt.</p>
+    }
+    else
+    {
+        <p>Es konnte keine Verbindung zur Datenbank hergestellt werden.</p>
+    }
+    
+    <h1>Hallo, diese Seite befindet sich im Aufbau</h1>
+</div>
