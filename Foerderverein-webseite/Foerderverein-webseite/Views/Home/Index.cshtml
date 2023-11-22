@@ -1,4 +1,4 @@
-﻿@using System.Data.SqlClient
+﻿@using Npgsql
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
 
@@ -10,7 +10,7 @@
     try
     {
         // Versuche eine Verbindung zur Datenbank herzustellen
-        using (var connection = new SqlConnection(Configuration.GetConnectionString("DefaultConnection")))
+        using (var connection = new NpgsqlConnection(Configuration.GetConnectionString("DefaultConnection")))
         {
             connection.Open();
             isDatabaseConnected = true;
@@ -23,6 +23,7 @@
     }
 }
 
+
 <div class="text-center">
     <h1 class="display-4">HALLO</h1>
     @if (isDatabaseConnected)
@@ -33,6 +34,6 @@
     {
         <p>Es konnte keine Verbindung zur Datenbank hergestellt werden.</p>
     }
-    
+
     <h1>Hallo, diese Seite befindet sich im Aufbau</h1>
 </div>
