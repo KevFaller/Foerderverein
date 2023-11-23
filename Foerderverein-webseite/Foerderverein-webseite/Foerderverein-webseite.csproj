@@ -12,11 +12,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Images\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="System.Data.SqlClient" />
+    <None Remove="Data\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
