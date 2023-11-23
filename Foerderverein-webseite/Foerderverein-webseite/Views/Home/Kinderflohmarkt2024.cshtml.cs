@@ -11,10 +11,12 @@ namespace Foerderverein_webseite.Views.Home
     public class Kinderflohmarkt2024Model : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<Kinderflohmarkt2024Model> _logger;
 
-        public Kinderflohmarkt2024Model(ApplicationDbContext context)
+        public Kinderflohmarkt2024Model(ApplicationDbContext context, ILogger<Kinderflohmarkt2024Model> logger)
         {
             _context = context;
+            _logger = logger; // Weisen Sie dem Logger die Instanz zu
         }
 
         [BindProperty]
@@ -22,16 +24,14 @@ namespace Foerderverein_webseite.Views.Home
 
         public void OnGet()
         {
-            FlohmarktEntry ??= new FlohmarktAnmeldedatenBase();
+            //FlohmarktEntry = new FlohmarktAnmeldedatenBase();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
-            Console.WriteLine("OnPostAsync is called.");
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            Console.WriteLine("OnPost is called.");
+            _logger.LogInformation($"FlohmarktAnmeldung is null: {FlohmarktEntry == null}");
+
 
             // Hier könntest du die Daten vor dem Speichern bearbeiten, falls notwendig.
 

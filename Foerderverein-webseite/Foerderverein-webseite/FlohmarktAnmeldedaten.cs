@@ -24,13 +24,4 @@ namespace Foerderverein_webseite
         public bool Kuchen { get; set; }
     }
 
-    public class Flohmarkt2024Anmeldedaten : FlohmarktAnmeldedatenBase
-    {
-        // Hier können spezifische Eigenschaften für Flohmarkt2024 hinzugefügt werden
-    }
-
-    public class Flohmarkt2025Anmeldedaten : FlohmarktAnmeldedatenBase
-    {
-        // Hier können spezifische Eigenschaften für Flohmarkt2025 hinzugefügt werden
-    }
 }

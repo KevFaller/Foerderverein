@@ -1,41 +1,41 @@
 ﻿@page
 @model Foerderverein_webseite.Views.Home.Kinderflohmarkt2024Model
 
-<form method="post" asp-page-handler="OnPostAsync">
-    <div class="form-group">
-        <label for="Nachname">Nachname:</label>
-        <input type="text" class="form-control" id="Nachname" asp-for="FlohmarktEntry.Nachname" required>
-    </div>
 
-    <div class="form-group">
+<form method="post">
+    <div>
         <label for="Vorname">Vorname:</label>
-        <input type="text" class="form-control" id="Vorname" asp-for="FlohmarktEntry.Vorname" required>
+        <input asp-for="FlohmarktEntry.Vorname" class="form-control" />
+        <span asp-validation-for="FlohmarktEntry.Vorname" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <div>
+        <label for="Nachname">Nachname:</label>
+        <input asp-for="FlohmarktEntry.Nachname" class="form-control" />
+        <span asp-validation-for="FlohmarktEntry.Nachname" class="text-danger"></span>
+    </div>
+
+    <div>
         <label for="Mailadresse">Mailadresse:</label>
-        <input type="email" class="form-control" id="Mailadresse" asp-for="FlohmarktEntry.Mailadresse" required>
+        <input asp-for="FlohmarktEntry.Mailadresse" class="form-control" />
+        <span asp-validation-for="FlohmarktEntry.Mailadresse" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
-        <label for="AnzahlTische">Anzahl Tische:</label>
-        <input type="number" class="form-control" id="AnzahlTische" asp-for="FlohmarktEntry.Tische" required>
+    <div>
+        <label for="Tische">Tische:</label>
+        <input asp-for="FlohmarktEntry.Tische" class="form-control" />
+        <span asp-validation-for="FlohmarktEntry.Tische" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
-        <label>Wählen Sie eine Option:</label>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" id="MitKuchen" name="KuchenOption" value="MitKuchen" asp-for="FlohmarktEntry.Kuchen">
-            <label class="form-check-label" for="MitKuchen">Mit Kuchen</label>
-        </div>
-        <div class="form-check">
-            <input type="radio" class="form-check-input" id="OhneKuchen" name="KuchenOption" value="OhneKuchen" asp-for="FlohmarktEntry.Kuchen">
-            <label class="form-check-label" for="OhneKuchen">Ohne Kuchen</label>
-        </div>
+    <div>
+        <label for="Kuchen">Kuchen:</label>
+        <input asp-for="FlohmarktEntry.Kuchen" type="checkbox" />
     </div>
 
-    <button type="submit" class="btn btn-primary">Formular absenden</button>
+    <button type="submit">Anmelden</button>
 </form>
+
+
 
 @section Scripts {
     <script>
