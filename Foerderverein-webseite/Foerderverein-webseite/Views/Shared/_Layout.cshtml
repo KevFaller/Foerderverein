@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between w-100">
-                    <img src="~/Förderverein_logo.png" alt="Vereinslogo" class="header-logo"  width="65" height="65">
+                    <img src="~/Förderverein_logo.png" alt="Vereinslogo" class="header-logo" width="65" height="65">
                     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Förderverein Städtische Kita am Löwenbergpark.eV</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -32,16 +32,35 @@
                             <a class="nav-link btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="UeberUns">Über uns</a>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Über uns
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="MitgliedWerden">Mitglied werden</a>
+                                    <a class="dropdown-item" href="#">Vorstand</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Veranstaltungen">Veranstaltungen</a>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Veranstaltungen
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#">Kindersachenflohmarkt 2023</a>
+                                    <a class="dropdown-item" href="#">Unterpunkt B</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
+
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -68,9 +87,10 @@
             </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
