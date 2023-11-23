@@ -26,7 +26,7 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Veranstaltungen()
+    public IActionResult Kinderflohmarkt2024()
     {
         return View();
     }

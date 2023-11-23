@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Foerderverein_webseite.Views.Home
 {
-    public class VeranstaltungenModel : PageModel
+	public class Kinderflohmarkt2024Model : PageModel
     {
         public void OnGet()
         {
