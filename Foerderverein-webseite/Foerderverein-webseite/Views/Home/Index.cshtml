@@ -1,6 +1,7 @@
 ﻿@using Npgsql
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
+@model Foerderverein_webseite.Views.Home.IndexModel
 
 @{
     ViewData["Title"] = "Startseite";
@@ -23,7 +24,6 @@
     }
 }
 
-
 <div class="text-center">
     <h1 class="display-4">HALLO</h1>
     @if (isDatabaseConnected)
@@ -36,4 +36,23 @@
     }
 
     <h1>Hallo, diese Seite befindet sich im Aufbau</h1>
+
+    @if (Model.ArtikelList != null && Model.ArtikelList.Any())
+    {
+        <h2>Artikel:</h2>
+        <ul>
+            @foreach (var artikel in Model.ArtikelList)
+            {
+                <li>
+                    <h3>@artikel.Titel</h3>
+                    <p>@artikel.Inhalt</p>
+                    <img src="@artikel.ImagePath" alt="Artikelbild">
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Keine Artikel vorhanden.</p>
+    }
 </div>

@@ -16,6 +16,7 @@ namespace Foerderverein_webseite.Data
       
 
         public DbSet<FlohmarktAnmeldedatenBase> FlohmarktAnmeldedatenBase { get; set; }
+        public DbSet<Artikel> Artikel { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
