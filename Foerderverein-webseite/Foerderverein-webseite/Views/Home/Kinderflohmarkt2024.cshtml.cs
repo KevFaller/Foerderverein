@@ -24,7 +24,7 @@ namespace Foerderverein_webseite.Views.Home
 
         public void OnGet()
         {
-            //FlohmarktEntry = new FlohmarktAnmeldedatenBase();
+            FlohmarktEntry = new FlohmarktAnmeldedatenBase();
         }
 
         public async Task<IActionResult> OnPost()
