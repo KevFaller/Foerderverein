@@ -37,8 +37,7 @@
 
     <h1>Hallo, diese Seite befindet sich im Aufbau</h1>
 
-    @if (Model != null && Model.ArtikelList != null && Model.ArtikelList.Any())
-    {
+    
         <h2>Artikel:</h2>
         <ul>
             @try
@@ -58,9 +57,5 @@
             }
 
         </ul>
-    }
-    else
-    {
-        <p>Keine Artikel vorhanden.</p>
-    }
+  
 </div>

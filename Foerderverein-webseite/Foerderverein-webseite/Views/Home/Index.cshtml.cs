@@ -10,26 +10,25 @@ namespace Foerderverein_webseite.Views.Home
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        
 
         public IndexModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IList<Artikel> ArtikelList { get; set; }
+        public IList<Artikel> ArtikelList { get; set; } = new List<Artikel>();
 
-        public async Task<IActionResult> OnGetAsync()
+        public async Task OnGetAsync()
         {
             try
             {
                 ArtikelList = await _context.Artikel.ToListAsync();
-                return Page();
             }
             catch (Exception ex)
             {
                 // Hier könntest du die Exception-Details protokollieren oder debuggen
                 Console.WriteLine($"Fehler in OnGetAsync: {ex.Message}");
-                return Page(); // oder return NotFound(); je nach Bedarf
             }
         }
 
