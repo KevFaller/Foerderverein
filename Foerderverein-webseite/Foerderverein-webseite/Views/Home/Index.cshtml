@@ -37,18 +37,26 @@
 
     <h1>Hallo, diese Seite befindet sich im Aufbau</h1>
 
-    @if (Model.ArtikelList != null && Model.ArtikelList.Any())
+    @if (Model != null && Model.ArtikelList != null && Model.ArtikelList.Any())
     {
         <h2>Artikel:</h2>
         <ul>
-            @foreach (var artikel in Model.ArtikelList)
+            @try
             {
-                <li>
-                    <h3>@artikel.Titel</h3>
-                    <p>@artikel.Inhalt</p>
-                    <img src="@artikel.ImagePath" alt="Artikelbild">
-                </li>
+                @foreach (var artikel in Model.ArtikelList)
+                {
+                    <li>
+                        <h3>@artikel.Titel</h3>
+                        <p>@artikel.Inhalt</p>
+                        <img src="@artikel.ImagePath" alt="Artikelbild">
+                    </li>
+                }
             }
+            catch (Exception ex)
+            {
+                <p>Fehler beim Rendern der Artikelliste: @ex.Message</p>
+            }
+
         </ul>
     }
     else
