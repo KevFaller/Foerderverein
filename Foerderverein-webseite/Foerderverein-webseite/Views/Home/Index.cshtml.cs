@@ -10,11 +10,13 @@ namespace Foerderverein_webseite.Views.Home
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger _logger;
         
 
-        public IndexModel(ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context, ILogger logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public IList<Artikel> ArtikelList { get; set; } = new List<Artikel>();
@@ -27,8 +29,7 @@ namespace Foerderverein_webseite.Views.Home
             }
             catch (Exception ex)
             {
-                // Hier könntest du die Exception-Details protokollieren oder debuggen
-                Console.WriteLine($"Fehler in OnGetAsync: {ex.Message}");
+                _logger.LogError(ex.Message);   
             }
         }
 
