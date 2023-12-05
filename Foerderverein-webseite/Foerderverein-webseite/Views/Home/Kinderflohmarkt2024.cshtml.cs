@@ -2,9 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Foerderverein_webseite.Data;
-using Foerderverein_webseite;
 
 namespace Foerderverein_webseite.Views.Home
 {
@@ -16,7 +15,7 @@ namespace Foerderverein_webseite.Views.Home
         public Kinderflohmarkt2024Model(ApplicationDbContext context, ILogger<Kinderflohmarkt2024Model> logger)
         {
             _context = context;
-            _logger = logger; // Weisen Sie dem Logger die Instanz zu
+            _logger = logger;
         }
 
         [BindProperty]
@@ -24,6 +23,7 @@ namespace Foerderverein_webseite.Views.Home
 
         public void OnGet()
         {
+            // Setze die Eigenschaft auf eine neue Instanz, um NullReferenceExceptions zu vermeiden.
             FlohmarktEntry = new FlohmarktAnmeldedatenBase();
         }
 
@@ -32,6 +32,12 @@ namespace Foerderverein_webseite.Views.Home
             Console.WriteLine("OnPost is called.");
             _logger.LogInformation($"FlohmarktAnmeldung is null: {FlohmarktEntry == null}");
 
+            // Überprüfe die Validität des Models
+            if (!ModelState.IsValid)
+            {
+                // Wenn das Model nicht gültig ist, zeige die Seite erneut an.
+                return Page();
+            }
 
             // Hier könntest du die Daten vor dem Speichern bearbeiten, falls notwendig.
 
@@ -42,7 +48,8 @@ namespace Foerderverein_webseite.Views.Home
             // Hier könntest du eine Weiterleitung oder eine Bestätigung implementieren.
             TempData["ShowPopup"] = true;
 
-            return RedirectToPage("/Index"); // Hier anpassen, wohin du nach dem Speichern weitergeleitet werden möchtest.
+            // Wenn die Daten erfolgreich gespeichert wurden, leite auf die Index-Seite weiter.
+            return RedirectToPage("/Index");
         }
     }
 }
