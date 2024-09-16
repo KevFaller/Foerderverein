@@ -20,13 +20,14 @@ include("./navigation.php");
 echo '
 <div class="relative bg-white">
   <div class="lg:absolute lg:inset-0 lg:left-1/2">
-    <img class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-[70%]" src="./Media/paul-povoroznuk-bJkynpjVRBQ-unsplash.jpg" alt="Flohmarkt bild">
+    <img class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-[70%]" src="./Media/logo.jpg" alt="Flohmarkt bild">
   </div>
   <div class="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
     <div class="px-6 lg:px-8">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Flohmarkt 2024</h2>
-        <p class="mt-2 text-lg leading-8 text-gray-600">Hier können Sie sich für den Flohmarkt 2024 registrieren!</p>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Flohmarkt 2025</h2>
+        <p class="mt-2 text-lg leading-8 text-gray-600">Hier können Sie sich für den Flohmarkt 2025 registrieren!</p>
+        <p class="mt-2 text-lg leading-8 text-gray-600">Genauer Termin wird noch bekanntgegeben</p>
         <form action="flohmarkt2024.php" method="POST" class="mt-16">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>

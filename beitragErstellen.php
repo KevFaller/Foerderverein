@@ -9,7 +9,7 @@
     <meta name="description" content="Registrieren Sie sich für unseren Flohmarkt 2024">
     <meta name="keywords" content="Foerderverein, kuchenverkauf, flohmarkt2024">
     <meta name="author" content="Kevin Faller">
-    <title>Kuchenverkauf</title>
+    <title>Beitrag Erstellen</title>
 </head>
 <body>
 <!-- Navigation -->
@@ -20,14 +20,14 @@ include("./navigation.php");
 echo '
 <div class="relative bg-white">
   <div class="lg:absolute lg:inset-0 lg:left-1/2">
-    <img class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-[70%]" src="./Media/Förderverein_logo.png" alt="Flohmarkt bild">
+    <img class="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-[70%]" src="./Media/logo.jpg" alt="Flohmarkt bild">
   </div>
   <div class="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
     <div class="px-6 lg:px-8">
       <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Kuchenverkauf</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Beitrag Erstellen</h2>
         <p class="mt-2 text-lg leading-8 text-gray-600">Hier können Sie einen Beitrag posten!</p>
-        <form action="kuchenverkauf.php" method="POST" class="mt-16" enctype="multipart/form-data">
+        <form action="beitragErstellen.php" method="POST" class="mt-16" enctype="multipart/form-data">
           <div class="grid gap-x-8 gap-y-6">
             <div>
               <label for="autor" class="block text-sm font-semibold leading-6 text-gray-900">Autor</label>
@@ -53,7 +53,7 @@ echo '
         <input type="file" name="images[]" id="images" multiple="multiple" class="block w-full text-sm text-gray-900 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100">
     </div>
           <div class="flex border-gray-900/10 pt-8">
-            <button type="submit" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Reservierung absenden</button>
+            <button type="submit" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Beitrag Posten</button>
           </div>
         </form>
       </div>

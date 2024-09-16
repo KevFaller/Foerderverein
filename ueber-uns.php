@@ -33,13 +33,17 @@ include("./navigation.php");
     $vorname = $row["vorname"];
     $nachname = $row["nachname"];
     $position = $row["position"];
+    $mail = $row["mail"];
+    
     echo '
     <li class="rounded-2xl bg-gray-800 px-8 py-10">
         <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="'.$bild.'" alt="">
         <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-white">'.$vorname.' '.$nachname.'</h3>
         <p class="text-sm leading-6 text-gray-400">'.$position.'</p>
         <ul role="list" class="mt-6 flex justify-center gap-x-6">
-  
+          <li>
+            <a href="mailto:'.$mail.'" class="text-sm leading-6 text-blue-400 hover:underline">'.$mail.'</a>
+          </li>
         </ul>
       </li>';
     }
