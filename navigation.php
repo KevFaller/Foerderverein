@@ -1,3 +1,13 @@
+<?php
+// Beginne die Ausgabe-Pufferung
+ob_start();
+
+// Überprüfen, ob eine Sitzung bereits gestartet ist
+if (session_status() === PHP_SESSION_NONE) 
+{
+    session_start();
+}
+?>
 <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="./index.php" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -23,11 +33,13 @@
             <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
                   <li>
-                    <a href="./flohmarkt2024.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Flohmarkt 2025</a>
+                    <a href="./flohmarkt2025.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Flohmarkt 2025</a>
                     </li>
+                    <!--
                     <li>
                     <a href="./kuchenverkauf.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Kuchenverkauf 2024</a>
                     </li>
+                    -->
                 </ul>
             </div>
         </li>
@@ -50,7 +62,23 @@
         <li>
           <a href="./mitgliederbereich.php" class="block py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Mitgliederbereich</a>
         </li>
+        
+        <!-- Check login status and display appropriate buttons -->
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <li class="flex items-center">
+            <span class="text-green-600 mr-4">Du bist aktuell eingeloggt</span>
+            <a href="./logout.php" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</a>
+          </li>
+        <?php else: ?>
+          <li>
+            <a href="./login.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
 </nav>
+<?php
+// Beende die Ausgabe-Pufferung
+ob_end_flush();
+?>

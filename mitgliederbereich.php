@@ -1,36 +1,45 @@
 <?php
-session_start();
+// Fehlerberichterstattung aktivieren
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Start der Session, falls noch nicht gestartet
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Überprüfen, ob der Benutzer eingeloggt ist
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    // Wenn der Benutzer nicht eingeloggt ist, weiterleiten
+    header("Location: login.php");
     exit();
 }
+
+// Verbindung zur Datenbank herstellen
+include("./db.php");
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="../Media/Foerderverein_logo.ico">
-    <meta name="description" content="Das ist der Mitgliederbereich">
-    <meta name="keywords" content="Login, Mitgliederbereich">
+    <link rel="icon" type="image/x-icon" href="./Media/Foerderverein_logo.ico">
+    <meta name="description" content="Mitgliederbereich des Fördervereins Kita Löwenbergpark">
     <meta name="author" content="Kevin Faller">
     <title>Mitgliederbereich des Fördervereins Kita Löwenbergpark</title>
 </head>
 <body>
 <!-- Navigation -->
-<?php
+<?php include("./navigation.php"); ?>
 
-error_reporting(E_ALL); ini_set('display_errors', 1);
-include("./db.php");
-include("./navigation.php");
-echo '
 <!-- Hauptbereich -->
 <div class="relative bg-white">
     <!-- Logo oben rechts -->
     <div class="absolute top-0 right-0 m-4">
-        <img class="h-20 w-auto" src="../Media/logo.jpg" alt="Logo">
+        <img class="h-20 w-auto" src="./Media/logo.jpg" alt="Logo">
     </div>
 
     <div class="py-24 sm:py-32 lg:mx-auto lg:max-w-7xl">
@@ -73,50 +82,9 @@ echo '
         </div>
     </div>
 </div>
-';
 
-include("./footer.php");
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $autor = $_POST["autor"];
-    $title = $_POST["title"];
-    $text = $_POST["text"];
-    $bild = "./Media/" . $_FILES['images']['name'][0]; 
-    $sql = "INSERT INTO Beitrag (title, text, bild, autor) 
-        VALUES ('$title','$text', '$bild', '$autor')";
+<?php include("./footer.php"); ?>
 
-    if ($connection->query($sql) === TRUE) {
-        $id_beitrag = $connection->insert_id;
-        if (isset($_FILES['images'])) {
-        $total = count($_FILES['images']['name']);
-
-        for ($i = 0; $i < $total; $i++) {
-            $tmpFilePath = $_FILES['images']['tmp_name'][$i];
-            if ($tmpFilePath != "") {
-                // Setup your new file path
-                $actual_bild = "./Media/" . $_FILES['images']['name'][$i];
-                $sql = "INSERT INTO Bilder (id_beitrag, bild) 
-                VALUES ('$id_beitrag','$actual_bild')";
-                if ($connection->query($sql) === TRUE ) {
-                $newFilePath = "./Media/" . $_FILES['images']['name'][$i];
-                }
-                // Move the file to your server
-                if (move_uploaded_file($tmpFilePath, $newFilePath)) {
-                    //echo "Uploaded: " . $_FILES['images']['name'][$i] . "<br>";
-                } else {
-                    //echo "Error uploading: " . $_FILES['images']['name'][$i] . "<br>";
-                }
-            }
-        }
-    }
-         
-        //echo "New record created successfully";
-    } else {
-        //echo "Error: " . $sql . "<br>" . $connection->error;
-    }
-    }
-?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>

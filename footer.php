@@ -5,11 +5,13 @@
         <a href="./index.php" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Home</a>
       </div>
       <div class="pb-6">
-        <a href="./flohmarkt2024.php" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Flohmark 2024</a>
+        <a href="./flohmarkt2025.php" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Flohmark 2025</a>
       </div>
+      <!--
       <div class="pb-6">
         <a href="./kuchenverkauf.php" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Kuchenverkauf 2024</a>
       </div>
+        -->
       <div class="pb-6">
         <a href="./ueber-uns.php" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Der Vorstand</a>
       </div>

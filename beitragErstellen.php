@@ -1,3 +1,14 @@
+<?php
+// Fehlerprotokollierung aktivieren (optional)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// Datenbankverbindung einbinden
+include("./db.php");
+
+// Navigation einbinden
+include("./navigation.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +25,8 @@
 <body>
 <!-- Navigation -->
 <?php
-error_reporting(E_ALL); ini_set('display_errors', 1);
-include("./db.php");
+ //error_reporting(E_ALL); ini_set('display_errors', 1);
+// include("./db.php");
 include("./navigation.php");
 echo '
 <div class="relative bg-white">
