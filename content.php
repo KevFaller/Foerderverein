@@ -1,17 +1,3 @@
-<?php
-// Autorennamen aufteilen
-    $autorParts = explode(' ', $autor);
-    $vorname = $autorParts[0];
-
-    // Bildpfad auf Basis des Vornamens erstellen
-    $authorImagePath = "./Media/" . $vorname . ".jpg";
-
-    // Prüfen, ob die Datei existiert, andernfalls Standardbild verwenden
-    if (!file_exists($authorImagePath)) {
-        $authorImagePath = $defaultAuthorImage;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +25,22 @@
         $bild = $row["bild"];
         $autor = $row["autor"];
         $created = $row["created"];
-        print_r(mysqli_fetch_assoc($result)["text"]);
+        
+        $defaultAuthorImage = "./Media/Foerderverein_logo.ico";
+// Autorennamen aufteilen
+    $autorParts = explode(' ', $autor);
+
+    $vorname = $autorParts[0];
+
+    // Bildpfad auf Basis des Vornamens erstellen
+    $authorImagePath = "./Media/" . $vorname . ".jpg";
+
+    // Prüfen, ob die Datei existiert, andernfalls Standardbild verwenden
+    if (!file_exists($authorImagePath)) {
+        $authorImagePath = $defaultAuthorImage;
+    }
+        // var_dump($authorImagePath);die();
+        // print_r(mysqli_fetch_assoc($result)["text"]);
     };
 
     echo '

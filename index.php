@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +19,7 @@ include("navigation.php");
 include("header.php");
 include("blog.php");
 include("footer.php");
+
 ?>
 <?php
 /*

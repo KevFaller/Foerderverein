@@ -32,7 +32,6 @@
         if (!file_exists($authorImagePath)) {
             $authorImagePath = $defaultAuthorImage;
         }
-
         echo '
           <article class="flex flex-col items-start justify-between">
             <div class="relative w-full">

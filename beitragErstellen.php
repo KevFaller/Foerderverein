@@ -1,12 +1,11 @@
 <?php
 // Fehlerprotokollierung aktivieren (optional)
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 // Datenbankverbindung einbinden
 include("./db.php");
 
 // Navigation einbinden
-include("./navigation.php");
 ?>
 
 <!DOCTYPE html>
