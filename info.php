@@ -7,17 +7,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./Media/Foerderverein_logo.ico">
     <meta name="description" content="Die Ofizielle Website von unserem Foerderverein">
-    <meta name="keywords" content="Foerderverein, kuchenverkauf, flohmarkt2024">
+    <meta name="keywords" content="Foerderverein, Infos, Kindergarten">
     <meta name="author" content="Kevin Faller">
-    <title>Foerderverein Kita Loewenbergpark</title>
+    <title>Infos vom Foerderverein Kita Loewenbergpark</title>
 </head>
 <body>
 <!-- Navigation -->
 <?php
 include("db.php");
 include("navigation.php");
-include("2Infos.php");
-include("header.php");
+//include("header.php");
+include("incluInfo.php");
 include("blog.php");
 include("footer.php");
 

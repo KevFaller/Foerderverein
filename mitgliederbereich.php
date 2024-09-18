@@ -66,10 +66,17 @@ include("./db.php");
 
             <!-- Platz für weitere Kacheln -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-gray-900">Weitere Funktionen</h3>
-                <p class="mt-2 text-gray-600">Hier können Sie weitere Funktionen hinzufügen.</p>
+                <h3 class="text-xl font-semibold text-gray-900">Info Erstellen</h3>
+                <p class="mt-2 text-gray-600">Erstellen Sie einen neuen Infos für die Webseite.</p>
+                <a href="infoErstellen.php" class="mt-4 block bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">Info erstellen</a>
+
             </div>
-            
+
+                        <!-- Kachel: Infos Flohmarkt 2025 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <?php include('InfosFlohmarkt2025.php'); ?>
+            </div>
+
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-gray-900">Weitere Funktionen</h3>
                 <p class="mt-2 text-gray-600">Hier können Sie weitere Funktionen hinzufügen.</p>
